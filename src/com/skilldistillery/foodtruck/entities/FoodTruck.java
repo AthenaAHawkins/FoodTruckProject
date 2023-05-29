@@ -1,7 +1,7 @@
 package com.skilldistillery.foodtruck.entities;
 
 public class FoodTruck {
-private static int currentNumberOfTrucks;// everytime constructor is called this must be incrememnted by 1 and assign this number to be the current Id
+private static int currentNumberOfTrucks = 1;// everytime constructor is called this must be incrememnted by 1 and assign this number to be the current Id
 private int id; 
 
 private String name;
@@ -10,19 +10,11 @@ private double rating;
 private static int nextTruckId = 1;
 
 
-
-
-public FoodTruck(int ID) {
-	FoodTruck.currentNumberOfTrucks++;
-	id = FoodTruck.currentNumberOfTrucks;
-}
-
-
 public FoodTruck (String name, String foodType, double rating) {
 	this.name = name;
 	this.foodType = foodType;
 	this.rating = rating;
-	this.id = nextTruckId;
+	this.id = currentNumberOfTrucks++;
 	
 }
 
